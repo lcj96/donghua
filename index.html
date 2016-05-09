@@ -1,53 +1,36 @@
+
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="{CHARSET}">
-	<title></title>
-	<style>
-	 .huang{
-	 	background-color: chocolate;
-	 	font-size: 18px;
-	 	width: 300px;
-	 	border: 10px solid #0000FF;
-	 	padding: 10px;
-	 }
-	
-	
-	
-	
-	</style>
-	</head>
-	<body>
-		<input type="button" id="jia" value="+" />
-		<input type="button" id="jian" value="-" />
-		<input type="button" id="huang" value="黄" />
-		<input type="button" id="hong" value="红" />
-		<p id="wen" style="font-size: 16px;" >	家住十堰城区的罗先生是一位钱币收藏爱好者，藏有多种古币和现币。日前罗先生回家整理自己平时收藏品时，从收藏的数百张1999版百元纸币中，发现了一张水印不同的百元错币。在日光灯的照耀下，正常百元币应该显示100的水印，却这张百元纸币显示出“300”的白色字样。	
-		</p>
-		
-		
-	</body>
-	<script>
-		var jia=document.getElementById('jia');
-		var jian=document.getElementById('jian');
-		var wen=document.getElementById('wen');
-		var huang=document.getElementById('huang');
-		var hong=document.getElementById('hong');
-		num=16;
-		jia.onclick=function(){
-			num=num+2
-			wen.style.fontSize=num+'px'
-		};
-		jian.onclick=function(){
-			num--
-			wen.style.fontSize=num+'px'
-		};
-		huang.onclick=function(){
-			wen.className='huang';
-		};
-		
-		
-	</script>
-
-
+<head>
+    <meta charset="utf-8" />
+    <title>按下回车开始跑动！</title>
+</head>
+<body>
+    <h2>按下回车开始跑动！</h2>
+    <img id="im" src="img/1.png" />
+ 
+    <script type="text/javascript">
+        var i = 0;
+        var images = document.getElementById('im');
+        //按回车键开始
+        document.onkeydown = function(){
+            var e = arguments[0];   
+            if(e.keyCode == 13){
+                //间隔一段时间调用
+                window.setInterval("changImages(i++);", 200);
+                return false;
+            }
+        }
+        function changImages(){
+            i=i%14;
+            //名字变成字符串
+            var name = i + "." + "png";
+            //加上目录
+            images.src = "img/" + name;
+        }
+ 
+    </script>
+ 
+</body>
 </html>
+
