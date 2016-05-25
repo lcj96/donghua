@@ -1,35 +1,37 @@
-
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title>按下回车开始跑动！</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+.kuang{
+	width:500px;
+	height:100px;
+	margin:0 auto;
+	margin-top:200px;
+	background-color:red;
+	text-align: center;
+	font-size:40px;
+	line-height:100px;
+	color:#FF0; }
+.kuang span{
+	display: none;
+}
+.kuang:hover span{
+	display: block;
+}
+
+</style>
+
 </head>
+
 <body>
-    <h2>按下回车开始跑动！</h2>
-    <img id="im" src="img/1.png" />
- 
-    <script type="text/javascript">
-        var i = 0;
-        var images = document.getElementById('im');
-        //按回车键开始
-        document.onkeydown = function(){
-            var e = arguments[0];   
-            if(e.keyCode == 13){
-                //间隔一段时间调用
-                window.setInterval("changImages(i++);", 200);
-                return false;
-            }
-        }
-        function changImages(){
-            i=i%14;
-            //名字变成字符串
-            var name = i + "." + "png";
-            //加上目录
-            images.src = "img/" + name;
-        }
- 
-    </script>
- 
+
+<div class="kuang">
+
+<span>sb一样</span>
+
+</div>
+
 </body>
 </html>
